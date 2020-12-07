@@ -81,6 +81,9 @@ def get_billing_info(user_profile: UserProfile) -> BillingInfo:
 
     return BillingInfo(show_billing=show_billing, show_plans=show_plans)
 
+def get_logged_in_devices() -> List[str]:
+    # Fix this function - Ask devs how to get list
+    return ["device1", "device2", "device3"]
 
 def get_user_permission_info(user_profile: Optional[UserProfile]) -> UserPermissionInfo:
     if user_profile is not None:
@@ -99,7 +102,6 @@ def get_user_permission_info(user_profile: Optional[UserProfile]) -> UserPermiss
             is_realm_owner=False,
             show_webathena=False,
         )
-
 
 def build_page_params_for_home_page_load(
     request: HttpRequest,
@@ -226,5 +228,8 @@ def build_page_params_for_home_page_load(
         page_params["enable_desktop_notifications"] = False
 
     page_params["translation_data"] = get_language_translation_data(request_language)
+
+    # Fetch data from the connected/logged in devices
+    page_params["logged_in_devices"] = get_logged_in_devices()
 
     return register_ret["queue_id"], page_params

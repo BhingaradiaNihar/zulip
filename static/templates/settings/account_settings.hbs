@@ -144,7 +144,9 @@
             </div>
             <div>
                 <h3 class="inline-block" id="custom-field-header" style="display: none">{{t "Connected devices" }}</h3>
-                <br>
+                {{#each page_params.logged_in_devices}}
+                <p>{{this}}</p>
+                {{/each}}
                 <a href ="#logout/" class="input-group">
                     <button type="submit" class="button rounded btn-danger" id="logout_all_devices_button">
                         {{t 'Logout from all devices' }}
