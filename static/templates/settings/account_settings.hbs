@@ -142,7 +142,15 @@
                     </div>
                 </form>
             </div>
-
+            <div>
+                <h3 class="inline-block" id="custom-field-header" style="display: none">{{t "Connected devices" }}</h3>
+                <br>
+                <a href ="#logout/" class="input-group">
+                    <button type="submit" class="button rounded btn-danger" id="logout_all_devices_button">
+                        {{t 'Logout from all devices' }}
+                    </button>
+                </a>
+            </div>
             <h3 class="inline-block" id="custom-field-header" {{#unless page_params.custom_profile_fields}}style="display: none"{{/unless}}>{{t "Profile" }}</h3>
             <form class="form-horizontal custom-profile-fields-form grid"></form>
             <button class="button rounded sea-green w-200 block" id="show_my_user_profile_modal">

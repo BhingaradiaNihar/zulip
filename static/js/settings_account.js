@@ -550,6 +550,10 @@ exports.set_up = function () {
         $("#deactivate_self_modal").modal("show");
     });
 
+    $("#logout_all_devices_button").on("click", () => {
+        $("#logout_form").trigger("submit");
+    });
+
     $("#account-settings").on("click", ".custom_user_field .remove_date", (e) => {
         e.preventDefault();
         e.stopPropagation();
